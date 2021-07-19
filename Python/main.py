@@ -23,15 +23,31 @@ operation = {
 
 num_one = int(input("enter first number\n"))
 
-print("select an operation")
-for symbol in operation:
-  print(symbol)
+def calculate_func(num_one, operation):
+    print("select an operation")
 
-selection = input('')
-selected_func = operation[selection]
+    for symbol in operation:
+        print(symbol)
 
-num_two = int(input("enter second number\n"))
+    selection = input('')
+    selected_func = operation[selection]
 
-answer = selected_func(num_one, num_two)
+    num_two = int(input("enter another number\n"))
 
-print(f"{num_one} {selection} {num_two} = {answer}")
+    answer = selected_func(num_one, num_two)
+
+    return answer
+
+continue_calc = True
+
+while continue_calc:
+    answer = calculate_func(num_one, operation)
+
+    print(f"The answer is {answer}")
+
+    num_one = answer
+
+    prompt_continue = input('continue calculating? y or n \n')
+
+    if not prompt_continue == 'y':
+        continue_calc = False
