@@ -21,7 +21,7 @@ operation = {
   '/':divide,
 }
 
-num_one = int(input("enter first number\n"))
+num_one = float(input("enter first number\n"))
 
 def calculate_func(num_one, operation):
     print("select an operation")
@@ -32,7 +32,7 @@ def calculate_func(num_one, operation):
     selection = input('')
     selected_func = operation[selection]
 
-    num_two = int(input("enter another number\n"))
+    num_two = float(input("enter another number\n"))
 
     answer = selected_func(num_one, num_two)
 
